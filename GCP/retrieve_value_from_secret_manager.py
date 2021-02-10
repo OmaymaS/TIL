@@ -9,4 +9,5 @@ SECRET_VERSION = "1" # "latest" to get the latest version
 secret_id = f'projects/{PROJECT_ID}/secrets/{SECRET_NAME}/versions/{SECRET_VERSION}'
 
 ## retrieve value
+client = secretmanager.SecretManagerServiceClient()
 secret_value = client.access_secret_version(request={"name": secret_id}).payload.data.decode("utf-8")
