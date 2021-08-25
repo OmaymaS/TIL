@@ -1,17 +1,28 @@
 
-Copy from pod to local directory.
+- Copy from pod to local directory.
+
 ```
 kubectl cp MY_NAMESPACE/POD_NAME:/DIR/FILE_NAME LOCAL_DIR
 ```
 
-Get the pods in a namespace.
+- Get the pods in a namespace.
+
 ```
 kubectl get pods --namespace=MY_NAMESPACE
 ```
 
-Get into a specific pod *(my case was a deployed project on GCP)*
+- Get into a specific pod
+
 ```
 kubectl exec --stdin --tty <POD_NAME> -- /bin/bash
+```
+
+## Env variables
+
+List the Pod's container environment variables.
+
+```
+kubectl exec <POD_NAME> -- printenv
 ```
 
 ## Secrets
