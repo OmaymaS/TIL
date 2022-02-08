@@ -41,3 +41,10 @@ Delete secret
 ```
 delete secret [SECRETNAME]
 ```
+
+- edit deployment 
+
+```
+kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record
+kubectl rollout status deployment.v1.apps/nginx-deployment
+```
